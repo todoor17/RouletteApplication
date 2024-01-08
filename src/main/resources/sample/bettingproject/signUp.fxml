@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane onInputMethodTextChanged="#switchToScene1" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.bettingproject.SignUpController">
+   <children>
+      <Button fx:id="signupButton" layoutX="471.0" layoutY="529.0" mnemonicParsing="false" onAction="#signUpButton" onInputMethodTextChanged="#switchToScene1" prefHeight="35.0" prefWidth="130.0" style="-fx-background-color: #eaa79c;" text="Sign Up">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Button>
+      <TextField fx:id="usernameF" alignment="CENTER" layoutX="441.0" layoutY="112.0" prefHeight="26.0" prefWidth="212.0" style="-fx-background-color: white;" />
+      <TextField fx:id="emailF" alignment="CENTER" layoutX="441.0" layoutY="153.0" prefHeight="26.0" prefWidth="212.0" style="-fx-background-color: white;" />
+      <TextField fx:id="firstnameF" alignment="CENTER" layoutX="440.0" layoutY="274.0" prefHeight="26.0" prefWidth="212.0" style="-fx-background-color: white;" />
+      <TextField fx:id="lastnameF" alignment="CENTER" layoutX="440.0" layoutY="313.0" prefHeight="26.0" prefWidth="212.0" style="-fx-background-color: white;" />
+      <TextField fx:id="cnpF" alignment="CENTER" layoutX="440.0" layoutY="351.0" prefHeight="26.0" prefWidth="212.0" style="-fx-background-color: white;" />
+      <TextField fx:id="addressF" alignment="CENTER" layoutX="440.0" layoutY="390.0" prefHeight="26.0" prefWidth="212.0" style="-fx-background-color: white;" />
+      <TextField fx:id="passwordF" alignment="CENTER" layoutX="441.0" layoutY="193.0" prefHeight="26.0" prefWidth="212.0" style="-fx-background-color: white;" />
+      <TextField fx:id="passwordF1" alignment="CENTER" layoutX="440.0" layoutY="233.0" prefHeight="26.0" prefWidth="212.0" style="-fx-background-color: white;" />
+      <Label alignment="CENTER" contentDisplay="BOTTOM" layoutX="170.0" layoutY="111.0" prefHeight="18.0" prefWidth="212.0" text="Username" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Label>
+      <Label alignment="CENTER" contentDisplay="BOTTOM" layoutX="170.0" layoutY="154.0" prefHeight="18.0" prefWidth="212.0" text="Email" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Label>
+      <RadioButton fx:id="rbYes" layoutX="441.0" layoutY="433.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="61.0" text="Yes" textFill="WHITE">
+         <toggleGroup>
+            <ToggleGroup fx:id="decision" />
+         </toggleGroup>
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></RadioButton>
+      <RadioButton fx:id="rbNo" layoutX="520.0" layoutY="433.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="70.0" text="No" textFill="WHITE" toggleGroup="$decision">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></RadioButton>
+      <Label alignment="CENTER" contentDisplay="BOTTOM" layoutX="170.0" layoutY="196.0" prefHeight="18.0" prefWidth="212.0" text="Password" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Label>
+      <Label alignment="CENTER" contentDisplay="BOTTOM" layoutX="170.0" layoutY="237.0" prefHeight="18.0" prefWidth="212.0" text="Repeat your password" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Label>
+      <Label alignment="CENTER" contentDisplay="BOTTOM" layoutX="170.0" layoutY="355.0" prefHeight="18.0" prefWidth="212.0" text="CNP" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Label>
+      <Label alignment="CENTER" contentDisplay="BOTTOM" layoutX="170.0" layoutY="278.0" prefHeight="18.0" prefWidth="212.0" text="First name" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Label>
+      <Label alignment="CENTER" contentDisplay="BOTTOM" layoutX="170.0" layoutY="394.0" prefHeight="18.0" prefWidth="212.0" text="Address" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Label>
+      <Label alignment="CENTER" contentDisplay="BOTTOM" layoutX="170.0" layoutY="432.0" prefHeight="18.0" prefWidth="212.0" text="Welcome bonus? (100 Ron)" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font></Label>
+      <Label alignment="CENTER" contentDisplay="BOTTOM" layoutX="170.0" layoutY="316.0" prefHeight="18.0" prefWidth="212.0" text="Last name" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Label>
+      <Label fx:id="labelWarning" alignment="CENTER" contentDisplay="CENTER" layoutX="286.0" layoutY="482.0" prefHeight="15.0" prefWidth="250.0" textFill="RED">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="labelWarning1" alignment="CENTER" contentDisplay="CENTER" layoutX="291.0" layoutY="482.0" prefHeight="15.0" prefWidth="240.0" textFill="#0f9914">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </Label>
+      <Button fx:id="signupButton1" layoutX="232.0" layoutY="529.0" mnemonicParsing="false" onAction="#switchToScene1" onInputMethodTextChanged="#switchToScene1" prefHeight="35.0" prefWidth="130.0" style="-fx-background-color: #eaa79c;" text="Back to login">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Button>
+      <ImageView fitHeight="108.0" fitWidth="250.0" layoutX="286.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/logo.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
