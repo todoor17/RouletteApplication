@@ -119,6 +119,10 @@ public class RouletteController {
         int index = 0;
         database.updateResultsArrayOnGetResult(results);
         //results[0] = -4, results[1] = -3, results[2] = -2, results[3] = -1;
+        if (results[3] == -1) {
+            database.specialUpdateResults(results);
+        }
+
 
         getResultI(redNumbers, blackNumbers, results[0], resultRed4, resultBlack4, resultGreen4);
         getResultI(redNumbers, blackNumbers, results[1], resultRed3, resultBlack3, resultGreen3);
@@ -242,8 +246,6 @@ public class RouletteController {
     @FXML
     private RadioButton rb50;
     @FXML
-    private RadioButton rbHalfMaxBet;
-    @FXML
     private RadioButton rbMaxBet;
     @FXML
     private Label betInfo;
@@ -253,7 +255,7 @@ public class RouletteController {
         betInfo.setTextFill(Color.WHITE);
         return buttonPressed.getText();
     }
-    public Integer checkBetSum() {
+    public Integer checkBetSum() throws SQLException {
         if (rb5.isSelected())
             return 5;
         else if (rb10.isSelected())
@@ -262,19 +264,12 @@ public class RouletteController {
             return 25;
         else if (rb50.isSelected())
             return 50;
-        else if (rbHalfMaxBet.isSelected()) {
-            int aux = parseInt(balanceLabel.getText());
-            if (aux != 0) {
-                return aux / 2;
-            }
-            return -2;
-        }
         else if (rbMaxBet.isSelected()) {
-            int aux = parseInt(balanceLabel.getText());
-            if (aux != 0) {
+            int aux = database.selectOldBalance(userID);
+            if (aux != 0 && aux > 0) {
                 return aux;
             }
-            return -2;
+            else return -2;
         }
         return -1;
     }
