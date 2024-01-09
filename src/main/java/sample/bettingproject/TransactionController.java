@@ -23,8 +23,6 @@ import static java.lang.Integer.parseInt;
 public class TransactionController {
     DBConnector database = new DBConnector();
     public ObservableList<Card> getCardsFromDatabase(String user) throws SQLException {
-        Connection connection = database.getConnection();
-
         return database.fillCards(userID.toString());
     }
 
@@ -128,8 +126,8 @@ public class TransactionController {
         }
     }
 
-    public boolean checkCard(String cardNumber) throws SQLException {
-        return database.checkCardTransaction(cardNumber, userID);
+    public boolean checkCard(String cardNumber, String cvv) throws SQLException {
+        return database.checkCardTransaction(cardNumber, cvv, userID);
     }
     public void backToMainPage(ActionEvent event) throws IOException, SQLException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("roulette.fxml"));
@@ -173,8 +171,12 @@ public class TransactionController {
                 cvv.clear();
                 infoLabel.setTextFill(Color.RED);
             }
+            else if (database.checkUniqueCard(cardNumber.getText()) == false) {
+                infoLabel.setText("This card number already exists");
+                infoLabel.setTextFill(Color.RED);
+            }
             else {
-                if (!checkCard(cardNumber.getText())) {
+                if (!checkCard(cardNumber.getText(), cvv.getText())) {
                     addCard(userID.toString(), cardNumber.getText(), cvv.getText());
                     infoLabel.setText("Card was succesfully added");
                     infoLabel.setTextFill(Color.GREEN);
@@ -188,7 +190,7 @@ public class TransactionController {
             int availableFunds = database.selectCardFundsDeposit(cardNumber.getText(), userID);
             int requestedFunds = parseInt(ammountTf.getText());
 
-            if (cardNumber.getText().isBlank() || cvv.getText().isBlank() || ammountTf.getText().isBlank()) {
+            if (cardNumber.getText().isBlank() || cvv.getText().isBlank()) {
                 infoLabel.setText("Some fields are empty");
                 infoLabel.setTextFill(Color.RED);
             } else if (cardNumber.getText().length() != 16) {
@@ -205,7 +207,7 @@ public class TransactionController {
                 infoLabel.setText("Ammount field is empty");
                 infoLabel.setTextFill(Color.RED);
             } else {
-                if (checkCard(cardNumber.getText())) {
+                if (checkCard(cardNumber.getText(), cvv.getText())) {
                     if (availableFunds < requestedFunds) {
                         infoLabel.setText("Card doesnt have enough money!");
                         infoLabel.setTextFill(Color.RED);
@@ -241,7 +243,7 @@ public class TransactionController {
                 infoLabel.setText("Ammount field is empty");
                 infoLabel.setTextFill(Color.RED);
             } else {
-                if (checkCard(cardNumber.getText())) {
+                if (checkCard(cardNumber.getText(), cvv.getText())) {
                     if (requestedSum > balance) {
                         infoLabel.setText("Requested sum is bigger than account balance");
                         infoLabel.setTextFill(Color.RED);
