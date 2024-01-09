@@ -21,13 +21,13 @@ If username **admin** and password **specialAdminPassword** are provided, user i
 
 ![image](https://github.com/todoor17/RouletteApp/assets/152257565/84ea74d6-4796-4728-b67d-67f2cee3a8c6)
 
-If normal user is logged in, `Roulette Window` opens. Here user must select a stake sum, place a bet (number, color, dozen, parity, 1-18/19-36) and see the result by pressing the "Spin the wheel" button. Top right placed balance label is updating with result and every bet placed. Top left placed time label shows the current time and updates every second. 
+If normal user is logged in, `Roulette Window` opens. Here user must select a stake sum (5, 10, 25, 50 or MAX BET), place a bet (number, color, dozen, parity, 1-18/19-36) and see the result by pressing the "Spin the wheel" button. Top right placed balance label is updating with result and every bet placed. Top left placed time label shows the current time and updates every second. 
 
-![image](https://github.com/todoor17/RouletteApp/assets/152257565/d9e9d456-441a-43b9-88e1-2c18265a1328)
+![image](https://github.com/todoor17/RouletteApplication/assets/152257565/56395b45-00b9-4a4e-9235-67cbbb46dc1f)
 
 If user runs out of money, he must make a deposit Transaction in order to play more (press Transaction button).
 
-![image](https://github.com/todoor17/RouletteApp/assets/152257565/5f34cf47-a53c-4173-8353-439fd30aaeac)
+![image](https://github.com/todoor17/RouletteApplication/assets/152257565/a2357c45-340c-44bf-8ea3-05e9de86ec31)
 
 By pressing Transactions button, `Transaction Window` opens. User's available cards are displayed in the top down list view. An operation (Add new card, Deposit, Withdraw) must be selected. If user wants to add a new card, he must add a 16 digit card number that don't exist in the database. After introducing a new card, it will have a random generated available sum (<600). The funds can be deposited after choosing deposit action. If user wants to withdraw money, he must introduce credentials of a specific card and make sure requested sum <= balance. 
 
