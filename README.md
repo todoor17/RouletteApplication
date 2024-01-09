@@ -21,7 +21,7 @@ If username **admin** and password **specialAdminPassword** are provided, user i
 
 ![image](https://github.com/todoor17/RouletteApp/assets/152257565/84ea74d6-4796-4728-b67d-67f2cee3a8c6)
 
-If normal user is logged in, `Roulette Window` opens. Here user must select a stake sum (5, 10, 25, 50 or MAX BET), place a bet (number, color, dozen, parity, 1-18/19-36) and see the result by pressing the "Spin the wheel" button. Top right placed balance label is updating with result and every bet placed. Top left placed time label shows the current time and updates every second. 
+If normal user is logged in, `Roulette Window` opens. Here user must select a stake sum (5, 10, 25, 50 or MAX BET), place a bet (number, color, dozen, parity, 1-18/19-36) and see the result by pressing the "Spin the wheel" button. Top right placed balance label is updating with result and every bet placed. Top left placed time label shows the current time and updates every second. User can check last 5 results by checking the middle right column with results.
 
 ![image](https://github.com/todoor17/RouletteApplication/assets/152257565/56395b45-00b9-4a4e-9235-67cbbb46dc1f)
 
